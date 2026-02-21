@@ -2,7 +2,7 @@
 Stock buy and sell
 
 
-LOGIC FOR ONE TRANSACTION:
+LOGIC FOR ONE TRANSACTION:LEETCODE
 class Solution {
     int stockBuySell(int arr[]) {
         // code here
