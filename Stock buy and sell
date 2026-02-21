@@ -1,0 +1,48 @@
+
+Stock buy and sell
+
+
+LOGIC FOR ONE TRANSACTION:
+class Solution {
+    int stockBuySell(int arr[]) {
+        // code here
+        int mini=arr[0];
+        int profit=0;
+        for(int i=1;i<arr.length;i++){
+            int cost=arr[i]-mini;
+            profit=Math.max(profit,cost);
+            mini=Math.min(mini,arr[i]);
+        }
+        
+        
+    
+    return profit;
+
+    }
+}
+
+
+
+FOR MULTIPLE TRANSATION[GFG OPTIMIZED]
+
+
+class Solution {
+    int stockBuySell(int arr[]) {
+        // code here
+        
+        int profit = 0;
+        
+        for(int i = 1; i < arr.length; i++){
+            int cost = arr[i] - arr[i - 1];
+            
+            if(cost > 0){
+                profit += cost;
+            }
+        }
+        
+        return profit;
+    }
+}
+
+
+
