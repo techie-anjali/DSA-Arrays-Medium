@@ -1,0 +1,35 @@
+class Solution {
+    void rearrange(ArrayList<Integer> arr) {
+        
+        int n = arr.size();
+        
+        ArrayList<Integer> pos = new ArrayList<>();
+        ArrayList<Integer> neg = new ArrayList<>();
+        
+        // Step 1: Separate positive & negative
+        for(int i = 0; i < n; i++){
+            if(arr.get(i) >= 0){
+                pos.add(arr.get(i));
+            } else {
+                neg.add(arr.get(i));
+            }
+        }
+        
+        int i = 0, j = 0, k = 0;
+        
+        // Step 2: Alternate fill (start with positive)
+        while(i < pos.size() && j < neg.size()){
+            arr.set(k++, pos.get(i++));
+            arr.set(k++, neg.get(j++));
+        }
+        
+        // Step 3: Add remaining elements
+        while(i < pos.size()){
+            arr.set(k++, pos.get(i++));
+        }
+        
+        while(j < neg.size()){
+            arr.set(k++, neg.get(j++));
+        }
+    }
+}
